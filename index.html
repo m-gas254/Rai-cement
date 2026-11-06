@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rai Cement Kenya | Building Kenya’s Future</title>
+<style>
+:root{--navy:#0a2540;--navy2:#0d2e4e;--navy3:#123a62;--char:#1e1e1e;--char2:#2a2a2a;--black:#061828;--green:#2e7d32;--green-l:#4caf50;--green-d:#1b5e20;--text:#e8eef3;--muted:#aebccb;--line:rgba(255,255,255,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.65;color:var(--text);background:var(--navy)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.faq-question:focus-visible{outline:3px solid var(--green-l);outline-offset:2px}
+
+/* HEADER */
+header{background:var(--navy);padding:10px 0;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--green);box-shadow:0 2px 18px rgba(0,0,0,.45)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{height:64px}
+.logo img{height:100%;width:auto;display:block;border-radius:6px}
+nav a{color:#fff;text-decoration:none;margin-left:26px;font-weight:500;font-size:.92rem;letter-spacing:.3px;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover{color:var(--green-l);border-color:var(--green-l)}
+
+/* HERO */
+.hero{position:relative;height:85vh;min-height:520px;color:#fff;display:flex;align-items:center;background:#111 linear-gradient(rgba(6,24,40,.72),rgba(6,24,40,.88)),url('hero-bg.jpg') center/cover}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--green),var(--green-l))}
+.hero-content{max-width:1200px;margin:0 auto;padding:0 20px;width:100%}
+.hero h1{font-size:clamp(2.6rem,6vw,4.8rem);font-weight:800;letter-spacing:2px;line-height:1.08;margin-bottom:22px;text-transform:uppercase;text-shadow:0 3px 20px rgba(0,0,0,.45)}
+.hero h1 span{color:var(--green-l);display:block}
+.hero p{font-size:1.18rem;max-width:560px;margin-bottom:32px;color:#e3eaf0}
+.btn{display:inline-block;background:var(--green);color:#fff;padding:14px 34px;text-decoration:none;font-weight:600;letter-spacing:.5px;border-radius:4px;transition:all .25s;border:none;cursor:pointer;font-size:1rem;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.btn:hover{background:var(--green-d);transform:translateY(-2px)}
+
+/* GENERAL */
+section{padding:84px 20px}
+.container{max-width:1100px;margin:0 auto}
+h2{font-size:2rem;font-weight:700;text-align:center;margin-bottom:14px;text-transform:uppercase;letter-spacing:1.5px;color:#fff}
+h2::after{content:"";display:block;width:64px;height:4px;background:var(--green-l);margin:14px auto 0;border-radius:2px}
+.section-sub{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 48px;font-size:1.05rem;margin-top:16px}
+
+/* ABOUT */
+.about{background:var(--navy2)}
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.value-card{background:var(--navy3);padding:30px 24px;border-radius:8px;border-top:4px solid var(--green-l);box-shadow:0 8px 22px rgba(0,0,0,.25);transition:transform .25s}
+.value-card:hover{transform:translateY(-5px)}
+.value-card .icon{font-size:1.9rem;margin-bottom:12px}
+.value-card h3{font-size:1.1rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:.6px;color:#fff}
+.value-card p{color:var(--muted);font-size:.94rem}
+
+/* PRODUCTS */
+.products{background:var(--navy)}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px}
+.product-card{background:var(--char);border-radius:10px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.4);transition:transform .25s}
+.product-card:hover{transform:translateY(-7px)}
+.product-img{height:260px;background-color:var(--char2);background-size:contain;background-repeat:no-repeat;background-position:center;padding:18px}
+.product-body{padding:26px;border-top:3px solid var(--green)}
+.product-body h3{font-size:1.3rem;color:var(--green-l);margin-bottom:6px}
+.product-price{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:12px}
+.product-price span{font-size:.88rem;font-weight:400;color:#aaa}
+.product-body p{font-size:.94rem;color:#ccc;line-height:1.65}
+
+/* DELIVERY */
+.delivery-location{background:var(--black)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.info-box{background:var(--char);padding:36px 32px;border-radius:10px;border-left:5px solid var(--green-l);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.info-box h3{font-size:1.3rem;margin-bottom:16px;color:#fff}
+.info-box p,.info-box li{color:#ccd6df;font-size:1rem;margin-bottom:8px}
+.info-box p strong{color:#fff}
+.info-box ul{list-style:none;padding:0}
+.info-box ul li::before{content:"✓ ";color:var(--green-l);font-weight:bold}
+
+/* FAQ */
+.faqs{background:var(--navy2)}
+.faq-item{background:var(--navy3);margin-bottom:14px;border-radius:8px;overflow:hidden;border-left:4px solid transparent;transition:border-color .2s}
+.faq-question{padding:19px 22px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;color:#fff}
+.faq-question span{font-size:1.4rem;color:var(--green-l);transition:transform .2s}
+.faq-question:hover{background:rgba(255,255,255,.06)}
+.faq-answer{padding:0 22px 20px;color:var(--muted);font-size:.96rem;display:none}
+.faq-item.active{border-color:var(--green-l)}
+.faq-item.active .faq-answer{display:block}
+.faq-item.active .faq-question{color:var(--green-l)}
+.faq-item.active .faq-question span{transform:rotate(45deg)}
+
+/* QUOTATION */
+.quotation{background:var(--navy)}
+.quote-form{max-width:620px;margin:0 auto;background:var(--char);padding:42px 36px;border-radius:12px;border-top:4px solid var(--green-l);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+.quote-form label{display:block;margin-bottom:6px;font-size:.9rem;color:#ccc}
+.quote-form input,.quote-form select,.quote-form textarea{width:100%;padding:12px 14px;margin-bottom:18px;border:1px solid #444;border-radius:6px;background:var(--char2);color:#fff;font:inherit}
+.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{border-color:var(--green-l)}
+.quote-form textarea{min-height:100px;resize:vertical}
+.quote-form button{width:100%;padding:14px;background:var(--green);color:#fff;border:none;border-radius:6px;font-size:1.05rem;font-weight:600;cursor:pointer;transition:background .2s}
+.quote-form button:hover{background:var(--green-d)}
+
+/* CONTACT */
+.contact{background:var(--black)}
+.contact-box{background:var(--char);border-radius:12px;padding:46px 36px;text-align:center;max-width:660px;margin:0 auto;border:1px solid var(--line);box-shadow:0 12px 30px rgba(0,0,0,.4)}
+.contact-details{margin:20px 0;font-size:1.1rem}
+.contact-details p{margin:12px 0;color:#e3eaf0}
+.contact-details strong{color:var(--green-l);display:inline-block;min-width:105px}
+.contact-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.btn-whatsapp{background:#25D366;color:#06210f}.btn-whatsapp:hover{background:#1da851}
+.btn-call{background:var(--green)}
+.btn-email{background:#1565c0}.btn-email:hover{background:#0d47a1}
+
+/* FOOTER */
+footer{background:#030d16;color:#8da0b0;text-align:center;padding:28px 20px;font-size:.9rem;border-top:3px solid var(--green)}
+
+/* Floating WhatsApp */
+.whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 15px rgba(0,0,0,.4);z-index:999;text-decoration:none;transition:transform .2s}
+.whatsapp-float:hover{transform:scale(1.1)}
+
+@media (max-width:768px){
+  nav{display:none}
+  section{padding:64px 20px}
+  .hero{height:70vh}
+  .two-col{grid-template-columns:1fr}
+  .contact-buttons{flex-direction:column;align-items:center}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.product-img{background-color:#fff}
+.steel{background:var(--navy2)}
+.steel-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;margin-bottom:56px;align-items:stretch}
+.steel-img{border-radius:10px;min-height:340px;background:url('steel-bars.jpg') center/cover;box-shadow:0 10px 26px rgba(0,0,0,.4);border-bottom:4px solid var(--green-l)}
+.price-table{width:100%;border-collapse:collapse;background:var(--char);border-radius:10px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.4)}
+.price-table th,.price-table td{padding:13px 22px;text-align:left}
+.price-table th{background:var(--green);color:#fff;font-size:.9rem;letter-spacing:.5px;text-transform:uppercase}
+.price-table td{border-top:1px solid var(--line);color:#e3eaf0}
+.price-table th:last-child,.price-table td:last-child{text-align:right}
+.price-table td:last-child{font-weight:700;color:#fff}
+.price-table tr:hover td{background:rgba(255,255,255,.04)}
+.steel-note{color:var(--muted);font-size:.88rem;margin-top:12px}
+.steel h3.sub-h{text-align:center;font-size:1.3rem;margin-bottom:26px;color:#fff;text-transform:uppercase;letter-spacing:1px}
+@media (max-width:768px){.steel-wrap{grid-template-columns:1fr}.steel-img{min-height:240px}}
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <img src="logo.jpg" alt="Rai Cement Kenya Logo">
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#steel">Steel &amp; Materials</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#quotation">Quotation</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>RAI CEMENT<span>KENYA</span></h1>
+      <p>
+        Building Kenya’s future with strength, consistency and trust.
+        High-quality cement for homes, commercial projects and infrastructure.
+      </p>
+      <a href="#products" class="btn">View Our Products</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Rai Cement</h2>
+      <p class="section-sub">
+        Manufactured by National Cement Co Ltd (Devki Group).
+        Trusted by builders across Kenya for consistent strength and quality.
+      </p>
+      <div class="values">
+        <div class="value-card">
+          <div class="icon">🦁</div>
+          <h3>Since 2010</h3>
+          <p>Over a decade of producing quality cement trusted by builders across Kenya.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">⚙️</div>
+          <h3>Consistency</h3>
+          <p>Every bag delivers the same high performance you can depend on.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🤝</div>
+          <h3>Solid Relations</h3>
+          <p>We build lasting partnerships with contractors, hardware stores and homeowners.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🛡️</div>
+          <h3>Trust &amp; Quality</h3>
+          <p>KEBS certified. Transparent processes. Strength you can measure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <div class="container">
+      <h2>Our Products</h2>
+      <p class="section-sub">High-performance cement for Kenyan construction needs.</p>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('product-32.5.jpg');"></div>
+          <div class="product-body">
+            <h3>Rai Cement 32.5R</h3>
+            <div class="product-price">KSh 550 <span>/ 50 kg</span></div>
+            <p>Best for masonry, plastering and general construction. Excellent workability and reliable strength.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('product-42.5-ultra.jpg');"></div>
+          <div class="product-body">
+            <h3>Rai Power 42.5N</h3>
+            <div class="product-price">KSh 650 – 680 <span>/ 50 kg</span></div>
+            <p>High-strength cement for structural work — columns, beams, slabs and projects needing higher strength.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('product-32.5.jpg');"></div>
+          <div class="product-body">
+            <h3>Dumu 32.5</h3>
+            <div class="product-price">KSh 650 <span>/ 50 kg</span></div>
+            <p>General purpose cement. Best for masonry, plastering and general construction. Excellent workability and reliable strength.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('product-42.5-ultra.jpg');"></div>
+          <div class="product-body">
+            <h3>Dumu Ultra 42.5N</h3>
+            <div class="product-price">KSh 700 <span>/ 50 kg</span></div>
+            <p>High-strength cement for structural work — columns, beams, slabs and projects needing higher strength.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('product-42.5-ultra-plus.jpg');"></div>
+          <div class="product-body">
+            <h3>Dumu Ultra Plus 42.5N</h3>
+            <div class="product-price">KSh 750 <span>/ 50 kg</span></div>
+            <p>Premium high-strength cement for structural work — columns, beams, slabs and demanding projects.</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img" style="background-image: url('bulk-supply.jpg'); background-size: cover;"></div>
+          <div class="product-body">
+            <h3>Bulk Supply</h3>
+            <div class="product-price">Contact for quote</div>
+            <p>For large projects, infrastructure and ready-mix. Nationwide delivery available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEEL & MATERIALS -->
+  <section class="steel" id="steel">
+    <div class="container">
+      <h2>Steel &amp; Construction Materials</h2>
+      <p class="section-sub">Reinforcement steel, wire and other building materials from one supplier.</p>
+      <div class="steel-wrap">
+        <div class="steel-img" role="img" aria-label="Stacks of steel reinforcement bars in a warehouse"></div>
+        <div>
+          <table class="price-table">
+            <thead><tr><th>Item</th><th>Price</th></tr></thead>
+            <tbody>
+          <tr><td>D8</td><td>KSh 450</td></tr>
+          <tr><td>D10</td><td>KSh 750</td></tr>
+          <tr><td>D12</td><td>KSh 1,100</td></tr>
+          <tr><td>D16</td><td>KSh 2,080</td></tr>
+          <tr><td>D20</td><td>KSh 3,450</td></tr>
+          <tr><td>D25</td><td>KSh 6,300</td></tr>
+          <tr><td>D32</td><td>KSh 12,250</td></tr>
+          <tr><td>Binding Wire (25kg)</td><td>KSh 3,600</td></tr>
+          <tr><td>Hoop Iron (20kg)</td><td>KSh 2,850</td></tr>
+            </tbody>
+          </table>
+          <p class="steel-note">Prices may change. Call or WhatsApp to confirm before ordering.</p>
+        </div>
+      </div>
+      <h3 class="sub-h">More Materials</h3>
+      <div class="values">
+        <div class="value-card">
+          <div class="icon">🔗</div>
+          <h3>Binding Wire</h3>
+          <p>High-quality wire for securing steel reinforcement.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🧱</div>
+          <h3>Wall-Pass / Hoop Iron</h3>
+          <p>Used for brickwork reinforcement.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">💧</div>
+          <h3>Polythene Paper</h3>
+          <p>Damp-proof membrane for construction waterproofing.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🔲</div>
+          <h3>Tile Adhesive</h3>
+          <p>Cementitious high-bond adhesive for wall and floor tiles from Rai Cement Kenya.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🏠</div>
+          <h3>Roofing &amp; Fencing Materials</h3>
+          <p>Corrugated roofing sheets, chain links, barbed wire and fencing posts.</p>
+        </div>
+        <div class="value-card">
+          <div class="icon">🚰</div>
+          <h3>Water Tanks</h3>
+          <p>Plastic storage tanks for domestic and commercial use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERY & LOCATION -->
+  <section class="delivery-location" id="delivery">
+    <div class="container">
+      <h2>Delivery &amp; Location</h2>
+      <p class="section-sub">We deliver across Kenya. Find us and request delivery easily.</p>
+      <div class="two-col">
+        <div class="info-box">
+          <h3>🚚 Delivery</h3>
+          <ul>
+            <li>Nationwide delivery available</li>
+            <li>Free delivery on bulk orders (100+ bags)</li>
+            <li>Same-day / next-day options in Nairobi &amp; surroundings</li>
+            <li>Reliable transport for project sites</li>
+          </ul>
+          <p style="margin-top:15px;">Call or WhatsApp to arrange delivery.</p>
+        </div>
+        <div class="info-box">
+          <h3>📍 Our Location</h3>
+          <p><strong>Athi River, Mombasa Road</strong></p>
+          <p>National Cement Co Ltd<br>
+          Athi River, off Mombasa Road<br>
+          Machakos County, Kenya</p>
+          <p style="margin-top:12px;">Easy access from Nairobi and the coastal highway.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="faqs" id="faqs">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <p class="section-sub">Quick answers to common questions about Rai Cement.</p>
+
+      <div class="faq-item active">
+        <div class="faq-question" tabindex="0" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
+          What is the difference between 32.5R and 42.5N?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          32.5R is ideal for masonry, plastering and general construction. 42.5N is a higher-strength cement meant for structural applications such as columns, beams and slabs. This applies to our Dumu 32.5, Dumu Ultra and Dumu Ultra Plus ranges too.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
+          Do you deliver across Kenya?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Yes. We deliver nationwide. Free delivery is available on bulk orders of 100 bags and above. Contact us for delivery charges to your location.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
+          Where is your factory / depot located?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          We are located at Athi River, off Mombasa Road, Machakos County. Easy access from Nairobi and the Mombasa highway.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
+          How can I get a quotation?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Use the Quotation form on this website, or call / WhatsApp us on +254 783 386 550. We respond quickly with pricing and delivery options.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" tabindex="0" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">
+          Is Rai Cement KEBS certified?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Yes. Rai Cement is manufactured by National Cement Co Ltd and meets KEBS standards for quality and performance.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTATION -->
+  <section class="quotation" id="quotation">
+    <div class="container">
+      <h2>Request a Quotation</h2>
+      <p class="section-sub">Tell us what you need and we will get back to you with pricing and delivery options.</p>
+
+      <form class="quote-form" onsubmit="sendQuote(event)">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" required placeholder="Full name">
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required placeholder="+254...">
+
+        <label for="product">Product</label>
+        <select id="product" required>
+          <option value="">Select product</option>
+          <option value="Rai 32.5R">Rai Cement 32.5R (KSh 550)</option>
+          <option value="Rai Power 42.5N">Rai Power 42.5N (KSh 650-680)</option>
+          <option value="Dumu 32.5">Dumu 32.5 (KSh 650)</option>
+          <option value="Dumu Ultra 42.5N">Dumu Ultra 42.5N (KSh 700)</option>
+          <option value="Dumu Ultra Plus 42.5N">Dumu Ultra Plus 42.5N (KSh 750)</option>
+          <option value="Steel Bars">Steel Reinforcement Bars (D8 - D32)</option>
+          <option value="Binding Wire / Hoop Iron">Binding Wire / Hoop Iron</option>
+          <option value="Other Materials">Other Materials (roofing, tanks, tile adhesive...)</option>
+          <option value="Bulk Supply">Bulk / Project Supply</option>
+        </select>
+
+        <label for="quantity">Quantity (bags / pieces)</label>
+        <input type="number" id="quantity" required placeholder="e.g. 50" min="1">
+
+        <label for="location">Delivery Location</label>
+        <input type="text" id="location" required placeholder="e.g. Nairobi, Kitengela, Mombasa">
+
+        <label for="notes">Additional Notes (optional)</label>
+        <textarea id="notes" placeholder="Any special requirements..."></textarea>
+
+        <button type="submit">Send Quotation Request</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p class="section-sub">Ready to order or need more information? Reach out anytime.</p>
+      <div class="contact-box">
+        <div class="contact-details">
+          <p><strong>Call:</strong> +254 783 386 550</p>
+          <p><strong>WhatsApp:</strong> +254 783 386 550</p>
+          <p><strong>Email:</strong> care16805@gmail.com</p>
+          <p><strong>Location:</strong> Athi River, Mombasa Road</p>
+        </div>
+        <div class="contact-buttons">
+          <a href="tel:+254783386550" class="btn btn-call">Call Now</a>
+          <a href="https://wa.me/254783386550" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:care16805@gmail.com" class="btn btn-email">Send Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Rai Cement Kenya • National Cement Co Ltd • Athi River, Mombasa Road
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/254783386550" class="whatsapp-float" target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">💬</a>
+
+  <script>
+    function toggleFaq(el) {
+      el.parentElement.classList.toggle('active');
+    }
+
+    function sendQuote(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const product = document.getElementById('product').value;
+      const quantity = document.getElementById('quantity').value;
+      const location = document.getElementById('location').value;
+      const notes = document.getElementById('notes').value;
+
+      const message = encodeURIComponent(`Hello Rai Cement,\n\n*Quotation Request*\nName: ${name}\nPhone: ${phone}\nProduct: ${product}\nQuantity: ${quantity}\nLocation: ${location}\nNotes: ${notes || 'None'}`);
+
+      window.open(`https://wa.me/254783386550?text=${message}`, '_blank');
+    }
+  </script>
+</body>
+        </html>
